@@ -54,8 +54,7 @@
 
     /* Phone: mostrar solo la primera imagen */
     @media (max-width: 767px) {
-      .pagina img:nth-child(2),
-      .pagina img:nth-child(3) {
+      .pagina img:nth-of-type(n+2) {
         display: none;
       }
       .pagina img {
@@ -126,7 +125,7 @@
 
   <!-- Audio de fondo -->
   <audio id="musica" loop>
-    <source src="musica.mp4" type="audio/mpeg">
+    <source src="musica.mp3" type="audio/mpeg">
     Tu navegador no soporta audio.
   </audio>
 
@@ -141,6 +140,7 @@
     }
 
     function siguiente() {
+      // En PC: iniciar audio al primer clic
       if (audio.paused) {
         audio.play().catch(err => console.log("El navegador bloqueó el autoplay:", err));
       }
@@ -149,6 +149,7 @@
     }
 
     function activarAudio() {
+      // En Phone: botón inicial para habilitar música
       audio.play().catch(err => console.log("El navegador bloqueó el autoplay:", err));
       // ocultar el botón después de activarlo
       document.getElementById("btnAudio").style.display = "none";
@@ -168,6 +169,8 @@
   </script>
 </body>
 </html>
+
+
 
 
 
