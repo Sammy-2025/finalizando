@@ -53,15 +53,17 @@
     }
 /* Phone: mostrar solo la primera imagen */
 @media (max-width: 767px) {
-  .pagina img:nth-of-type(n+2) {
-    display: none;   /* Oculta todas las imágenes a partir de la segunda */
-  }
   .pagina img {
+    display: none;              /* Oculta todas las imágenes */
+  }
+  .pagina img:first-of-type {
+    display: block;             /* Muestra solo la primera */
     width: 90%;
-    margin: 0;
+    margin: 0 auto;
     border: none;
   }
 }
+
    </style>
 </head>
 <body>
@@ -168,6 +170,7 @@
   </script>
 </body>
 </html>
+
 
 
 
